@@ -24,7 +24,7 @@ function changePage(position) {
   asap = true;
   if (position == "#works") {goToWorks();}
   else if (position == "#aboutMe") {goToAbout();}
-  else if (position.substring(0, 12) == "#content") {goToSingleWork(position.substr(1));}
+  else if (position.substring(0, 8) == "#content") {goToSingleWork(position.substr(1));}
   else {console.log(position+" is not a valid position.")}
   asap = false;
 };
