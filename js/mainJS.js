@@ -24,7 +24,7 @@ function changePage(position) {
   asap = true;
   if (position == "#works") {goToWorks();}
   else if (position == "#aboutMe") {goToAbout();}
-  else if (position.substring(0, 12) == "#works_pages") {goToSingleWork(position.substr(1));}
+  else if (position.substring(0, 12) == "#content") {goToSingleWork(position.substr(1));}
   else {console.log(position+" is not a valid position.")}
   asap = false;
 };
@@ -464,14 +464,14 @@ function is_touch_device() {
 }
 
 if (!is_touch_device()) {
-  $("#gridItem-To_Anagrafe").click(function() { goToSingleWork("works_pages/To_Anagrafe.html"); });
-  $("#gridItem-AV_Trust").click(function() { goToSingleWork("works_pages/AV_Trust.html"); });
-  $("#gridItem-BlaBlaCar_UX").click(function() {  goToSingleWork("works_pages/BlaBlaCar_UX.html"); });
-  $("#gridItem-Il_Nemico").click(function() { goToSingleWork("works_pages/Il_Nemico.html"); });
-  $("#gridItem-Cretive_Coding").click(function() { goToSingleWork("works_pages/Cretive_Coding.html") });
-  $("#gridItem-Trenord_Redesig").click(function() { goToSingleWork("works_pages/Trenord_Redesign.html"); });
-  $("#gridItem-StraightUp").click(function() { goToSingleWork("works_pages/StraightUp.html"); });
-  $("#gridItem-Ansiocromo").click(function() { goToSingleWork("works_pages/Ansiocromo.html"); });
+  $("#gridItem-To_Anagrafe").click(function() { goToSingleWork("content/To_Anagrafe.html"); });
+  $("#gridItem-AV_Trust").click(function() { goToSingleWork("content/AV_Trust.html"); });
+  $("#gridItem-BlaBlaCar_UX").click(function() {  goToSingleWork("content/BlaBlaCar_UX.html"); });
+  $("#gridItem-Il_Nemico").click(function() { goToSingleWork("content/Il_Nemico.html"); });
+  $("#gridItem-Cretive_Coding").click(function() { goToSingleWork("content/Cretive_Coding.html") });
+  $("#gridItem-Trenord_Redesig").click(function() { goToSingleWork("content/Trenord_Redesign.html"); });
+  $("#gridItem-StraightUp").click(function() { goToSingleWork("content/StraightUp.html"); });
+  $("#gridItem-Ansiocromo").click(function() { goToSingleWork("content/Ansiocromo.html"); });
 }
 
 else {
@@ -485,7 +485,7 @@ else {
     tapGrid7=0;
     tapGrid8=0;
 
-    if (tapGrid1>1) {goToSingleWork("works_pages/To_Anagrafe.html");}
+    if (tapGrid1>1) {goToSingleWork("content/To_Anagrafe.html");}
   });
 
   $("#gridItem-BlaBlaCar_UX").click(function() {
@@ -498,7 +498,7 @@ else {
     tapGrid7=0;
     tapGrid8=0;
 
-    if (tapGrid2>1) {goToSingleWork('works_pages/BlaBlaCar_UX.html');}
+    if (tapGrid2>1) {goToSingleWork('content/BlaBlaCar_UX.html');}
   });
 
   $("#gridItem-Trenord_Redesig").click(function() {
@@ -511,7 +511,7 @@ else {
     tapGrid7=0;
     tapGrid8=0;
 
-    if (tapGrid3>1) {goToSingleWork('works_pages/Trenord_Redesign.html');}
+    if (tapGrid3>1) {goToSingleWork('content/Trenord_Redesign.html');}
   });
 
   $("#gridItem-Il_Nemico").click(function() {
@@ -524,7 +524,7 @@ else {
     tapGrid7=0;
     tapGrid8=0;
 
-    if (tapGrid4>1) {goToSingleWork('works_pages/Il_Nemico.html');}
+    if (tapGrid4>1) {goToSingleWork('content/Il_Nemico.html');}
   });
 
   $("#gridItem-Cretive_Coding").click(function() {
@@ -537,7 +537,7 @@ else {
     tapGrid7=0;
     tapGrid8=0;
 
-    if (tapGrid5>1) {goToSingleWork('works_pages/Cretive_Coding.html');}
+    if (tapGrid5>1) {goToSingleWork('content/Cretive_Coding.html');}
   });
 
   $("#gridItem-AV_Trust").click(function() {
@@ -550,7 +550,7 @@ else {
     tapGrid7=0;
     tapGrid8=0;
 
-    if (tapGrid6>1) {goToSingleWork('works_pages/AV_Trust.html');}
+    if (tapGrid6>1) {goToSingleWork('content/AV_Trust.html');}
   });
 
   $("#gridItem-StraightUp").click(function() {
@@ -563,7 +563,7 @@ else {
     tapGrid7++;
     tapGrid8=0;
 
-    if (tapGrid7>1) {goToSingleWork('works_pages/StraightUp.html');}
+    if (tapGrid7>1) {goToSingleWork('content/StraightUp.html');}
   });
 
   $("#gridItem-Ansiocromo").click(function() {
@@ -576,7 +576,7 @@ else {
     tapGrid7=0;
     tapGrid8++;
 
-    if (tapGrid8>1) {goToSingleWork('works_pages/Ansiocromo.html');}
+    if (tapGrid8>1) {goToSingleWork('content/Ansiocromo.html');}
   });
 }
 
