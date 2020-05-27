@@ -324,7 +324,7 @@ function goToSingleWork(path) {
     window.location.hash=path;
 
     $("#workWrapper").empty();
-    $("#workWrapper").load( path+" #workContenet" );
+    $("#workWrapper").load( path+" #workContenet",function(){});
 
     $("#containerTitle").css("opacity","0");
     $("#worksGrid").css("opacity","0");
@@ -352,6 +352,8 @@ function goToSingleWork(path) {
     $("#workWrapper").css("opacity","1");
     $("#legal").css("opacity","1");
 
+    changeElementsOnDimension();
+
     animationBusy = false;
   }, 1010))
   }
@@ -365,7 +367,7 @@ function goToSingleWork(path) {
     });
 
     $("#workWrapper").empty();
-    $("#workWrapper").load( path+" #workContenet" );
+    $("#workWrapper").load( path+" #workContenet",function(){changeElementsOnDimension();});
 
     $("#worksGrid").addClass("hide");
     $("#about").addClass("hide");
@@ -601,7 +603,7 @@ else {
 }
 
 window.addEventListener("resize", function() {changeElementsOnDimension();});
-window.addEventListener("load", function() {setTimeout(function () {changeElementsOnDimension()}, 10)});
+window.addEventListener("load", function() {changeElementsOnDimension();});
 
 function changeElementsOnDimension() {
   if ((window.innerWidth >= 768) && (window.innerWidth <= 992)) {
@@ -623,6 +625,10 @@ function changeElementsOnDimension() {
   else {
     $(".container").addClass("container-fluid");
     $(".container").removeClass("container");
+  }
+
+  for (var i = 0; i < document.getElementsByClassName("Image16_9").length; i++) {
+    document.getElementsByClassName("Image16_9")[i].style.height = (document.getElementsByClassName("Image16_9")[i].getBoundingClientRect().width)/(16/9) +"px"
   }
 
 }
