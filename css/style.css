@@ -52,17 +52,25 @@ body {
   #noJsCover {
     font-size: 10px;
   }
-}
 
-@media screen and (max-width: 480px) {
   #coverContainer {
-    transform: scale(0.75);
+    padding: 0px;
   }
 }
 
-@media screen and (max-height: 480px) {
+@media (max-width: 740px) and (orientation:landscape) {
   #coverContainer {
     transform: scale(0.65);
+    margin-top: -25vh;
+    padding: 0px;
+  }
+}
+
+@media (max-width: 920px) and (orientation:landscape) {
+  #coverContainer {
+    transform: scale(0.65);
+    /*margin-top: -25vh;*/
+    padding: 0px;
   }
 }
 
@@ -610,7 +618,7 @@ cursor: pointer;
 
 .collapsing {
   transition-duration: 1s;
-  transition-timing-function: ease-in-out;
+/*  transition-timing-function: ease-in-out;*/
 }
 
 .subTitle {
