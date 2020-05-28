@@ -74,16 +74,16 @@ function removeTransition() {
 }
 
 function addTransition() {
-  $("#containerTitle").css('transition', 'opacity 1s');
+  $("#containerTitle").css('transition', 'opacity 0.75s');
 
-  $("#worksGrid").css('transition', 'opacity 1s');
-  $("#workWrapper").css('transition', 'opacity 1s');
-  $("#about").css('transition', 'opacity 1s');
+  $("#worksGrid").css('transition', 'opacity 0.75s');
+  $("#workWrapper").css('transition', 'opacity 0.75s');
+  $("#about").css('transition', 'opacity 0.75s');
 
-  $("#workBack").css('transition', 'opacity 1s');
-  $("#backTop").css('transition', 'opacity 1s');
+  $("#workBack").css('transition', 'opacity 0.75s');
+  $("#backTop").css('transition', 'opacity 0.75s');
 
-  $("#legal").css('transition', 'opacity 1s');
+  $("#legal").css('transition', 'opacity 0.75s');
 }
 
 //Cover video//
@@ -134,22 +134,22 @@ function showDown() {
 
     timeouts.push(setTimeout(function() {
       $('#coverContainer').css('opacity', '0');
-    }, 1000)) //wait before cover fade out
+    }, 750)) //wait before cover fade out
 
     timeouts.push(setTimeout(function() {
       $("#coverContainer").addClass("hide");
       $("#mainPanel").removeClass("hide");
       $("#homeTitle").removeClass("hide");
-    }, 2000)) //wait after cover fade out
+    }, 1750)) //wait after cover fade out
 
     timeouts.push(setTimeout(function() {
       $('#containerTitle').css('marginTop', '0px');
       $("#containerTitle").removeClass("BlurIn");
-    }, 5200))  //wait before title movment
+    }, 3800))  //wait before title movment
 
     timeouts.push(setTimeout(function() {
       $('#menuTitle').css('opacity', '1');
-    }, 8000))  //wait before menu fadeIn
+    }, 6400))  //wait before menu fadeIn
 
     timeouts.push(setTimeout(function() {
       $('.collapse_works').removeClass("hide");
@@ -160,7 +160,7 @@ function showDown() {
       animationBusy = false;
       window.location.hash="works";
       console.log("Intro finished")
-    }, 9000))  //wait before show works
+    }, 7600))  //wait before show works
 
   }
 
@@ -205,26 +205,27 @@ function goToWorks() {
 
       $("#worksGrid").css('opacity', '0');
 
+      timeouts.push(setTimeout(function() {$("#containerTitle").removeClass("hide");}, 740))
+
       timeouts.push(setTimeout(function() {
         $("#about").addClass("hide");
         $("#workWrapper").addClass("hide");
         $("#backTop").addClass("hide");
         $("#workBack").addClass("hide");
 
-        $("#containerTitle").removeClass("hide");
         $("#containerTitle").html("<h1><span class='line'>Hey, nice to meet you! </span> <span class='line'> I'm Andrea,</span><br><span class='line'> and I'm an Interaction Designer </span> <span class='line'> based in Milan.</span></h1>")
         $("#containerTitle").css('opacity', '1');
 
         $("#worksGrid").removeClass("hide");
         $("#legal").removeClass("hide");
 
-      }, 1000))
+      }, 750))
 
       timeouts.push(setTimeout(function() {
         $("#worksGrid").css('opacity', '1');
         $("#legal").css('opacity', '1');
         animationBusy = false;
-      }, 2000))
+      }, 1500))
   }
   else if ((animationBusy == true)||(asap == true)) {  //if click and animtion is arlady running (or is called from hash changed, i.e. page refleshed), go to works ASAP
     if (asap == false) {window.location.hash="works"};
@@ -268,6 +269,8 @@ function goToAbout() {
 
     $("#about").css('opacity', '0');
 
+    timeouts.push(setTimeout(function() {$("#containerTitle").removeClass("hide");}, 740))
+
     timeouts.push(setTimeout(function() {
       $("#worksGrid").addClass("hide");
       $("#workWrapper").addClass("hide");
@@ -275,13 +278,12 @@ function goToAbout() {
       $("#workBack").addClass("hide");
 
       $("#containerTitle").html('<h1><span class="line">Lets know eachother </span> <span class="line"> a little better!</span></h1>')
-      $("#containerTitle").removeClass("hide");
       $("#containerTitle").css('opacity', '1');
 
       $("#about").removeClass("hide");
       $("#legal").removeClass("hide");
 
-    }, 1000))
+    }, 750))
 
     timeouts.push(setTimeout(function() {
       $("#about").css('opacity', '1');
@@ -289,7 +291,7 @@ function goToAbout() {
 
       animationBusy = false;
 
-    }, 2000))
+    }, 1500))
   }
   else if ((animationBusy == true)||(asap == true)) {    //if click and animtion is arlady running (or is called from hash changed, i.e. page refleshed), go to about ASAP
     if (asap == false) {window.location.hash="aboutMe"};
@@ -344,7 +346,7 @@ function goToSingleWork(path) {
     $("#workWrapper").removeClass("hide");
     $("#workBack").removeClass("hide");
     $("#backTop").removeClass("hide");
-  }, 1000))
+  }, 750))
 
   timeouts.push(setTimeout(function() {
     $("#workBack").css("opacity","1");
@@ -355,7 +357,7 @@ function goToSingleWork(path) {
     changeElementsOnDimension();
 
     animationBusy = false;
-  }, 1010))
+  }, 760))
   }
   else if ((animationBusy == true)||(asap == true)) {  //if click and animtion is arlady running (or is called from hash changed, i.e. page refleshed), go to selected work ASAP
     if (asap == false) {window.location.hash=path};
@@ -419,14 +421,14 @@ function backWorks() {
         $("#worksGrid").removeClass("hide");
         $("#legal").removeClass("hide");
 
-      }, 1000))
+      }, 750))
 
       timeouts.push(setTimeout(function() {
         $("#worksGrid").css('opacity', '1');
         $("#containerTitle").css('opacity', '1');
         $("#legal").css('opacity', '1');
         animationBusy = false;
-      }, 1200))
+      }, 1500))
   }
   else if ((animationBusy == true)||(asap == true)) {  //if click and animtion is arlady running (or is called from hash changed, i.e. page refleshed) return from selected work ASAP
     if (asap == false) {window.location.hash="works"};
